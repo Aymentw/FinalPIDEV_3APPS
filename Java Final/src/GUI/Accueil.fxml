@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="1058.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AccueilController">
+   <children>
+      <Pane fx:id="event_pane_home" prefHeight="460.0" prefWidth="1066.0" style="-fx-background-color: white; -fx-border-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane fx:id="slide_pane" prefHeight="468.0" prefWidth="1078.0">
+               <children>
+                  <GridPane fx:id="grid_comment" layoutX="708.0" layoutY="127.0" prefHeight="289.0" prefWidth="370.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="438.0" minHeight="0.0" prefHeight="249.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="373.0" minHeight="0.0" prefHeight="73.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <StackPane fx:id="stackpane_details" prefHeight="156.0" prefWidth="358.0" visible="false">
+                           <children>
+                              <JFXDialogLayout fx:id="details_dialog" prefHeight="175.0" prefWidth="370.0">
+                                 <opaqueInsets>
+                                    <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                 </opaqueInsets>
+                              </JFXDialogLayout>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </StackPane>
+                        <StackPane fx:id="comment_stackpane" prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                              <JFXDialogLayout fx:id="report_dialog" />
+                           </children>
+                        </StackPane>
+                        <JFXListView fx:id="comment_list" prefHeight="330.0" prefWidth="370.0" />
+                        <Pane prefHeight="36.0" prefWidth="370.0" style="-fx-background-color: white;" GridPane.rowIndex="1">
+                           <children>
+                              <JFXTextArea fx:id="comment_content" layoutX="7.0" layoutY="7.0" prefHeight="55.0" prefWidth="297.0" style="-fx-border-color: #FFB2BE;" />
+                              <ImageView fitHeight="50.0" fitWidth="49.0" layoutX="311.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/comment.gif" />
+                                 </image>
+                              </ImageView>
+                              <JFXButton fx:id="btn_commenter" layoutX="311.0" layoutY="13.0" prefHeight="44.0" prefWidth="49.0" textFill="WHITE" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </GridPane>
+                  <Pane fx:id="top_pane" layoutX="709.0" layoutY="1.0" prefHeight="126.0" prefWidth="366.0">
+                     <children>
+                        <StackPane fx:id="reservation_stackpane" layoutX="16.0" layoutY="9.0" prefHeight="57.0" prefWidth="329.0" style="-fx-background-color: white;">
+                           <children>
+                              <JFXDialogLayout fx:id="reservation_dialog" prefHeight="110.0" prefWidth="416.0" />
+                           </children>
+                        </StackPane>
+                        <ImageView fx:id="event_image" fitHeight="80.0" fitWidth="78.0" layoutX="278.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/event.jpg" />
+                           </image>
+                        </ImageView>
+                        <JFXButton fx:id="events_home" layoutX="281.0" layoutY="14.0" onAction="#navigation_event" prefHeight="80.0" prefWidth="76.0" />
+                        <ImageView fx:id="reserver_image" fitHeight="29.0" fitWidth="188.0" layoutX="13.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/bouton-reserver.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton fx:id="reservation_btn" layoutX="14.0" layoutY="90.0" prefHeight="29.0" prefWidth="167.0" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <JFXDrawer fx:id="drawer" defaultDrawerSize="450.0" direction="TOP" layoutX="708.0" overLayVisible="false" prefHeight="468.0" prefWidth="370.0" resizableOnDrag="true" resizeContent="true">
+         <children>
+            <Pane fx:id="sidepane" prefHeight="564.0" prefWidth="335.0">
+               <children>
+                  <Pane fx:id="coloc_pane" layoutX="-2.0" onMouseEntered="#coloc_hover" onMouseExited="#coloc_exit" prefHeight="225.0" prefWidth="187.0" style="-fx-background-color: white; -fx-border-color: #F43955;">
+                     <children>
+                        <Text fx:id="coloc_text" fill="#f43955" fontSmoothingType="LCD" layoutX="38.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Colocation">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                           <effect>
+                              <Blend />
+                           </effect>
+                        </Text>
+                        <ImageView fx:id="img_coloc" fitHeight="95.0" fitWidth="103.0" layoutX="39.0" layoutY="99.0">
+                           <image>
+                              <Image url="@../Resources/colocation.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton focusTraversable="false" onAction="#colocbtn_action" onMouseEntered="#coloc_hover" prefHeight="225.0" prefWidth="187.0" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="cov_pane" layoutX="182.0" onMouseEntered="#cov_hover" onMouseExited="#cov_exit" prefHeight="225.0" prefWidth="188.0" style="-fx-background-color: white; -fx-border-color: #F43955;">
+                     <children>
+                        <ImageView fx:id="img_cov" fitHeight="102.0" fitWidth="129.0" layoutX="26.0" layoutY="101.0">
+                           <image>
+                              <Image url="@../Resources/covoiturage.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton focusTraversable="false" onAction="#covbtn_action" onMouseEntered="#cov_hover" prefHeight="225.0" prefWidth="187.0" />
+                        <Text fx:id="cov_text" fill="#f43955" fontSmoothingType="LCD" layoutX="38.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Covoiturage">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                           <effect>
+                              <Blend />
+                           </effect>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="doc_pane" focusTraversable="true" layoutX="-2.0" layoutY="225.0" onMouseEntered="#doc_hover" onMouseExited="#doc_exit" prefHeight="243.0" prefWidth="187.0" style="-fx-background-color: white; -fx-border-color: #F43955;">
+                     <children>
+                        <ImageView fx:id="img_doc" fitHeight="110.0" fitWidth="91.0" layoutX="45.0" layoutY="81.0">
+                           <image>
+                              <Image url="@../Resources/Document.png" />
+                           </image>
+                        </ImageView>
+                        <Text fx:id="doc_text" fill="#f43955" fontSmoothingType="LCD" layoutX="17.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Partage des documents">
+                           <effect>
+                              <Blend />
+                           </effect>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <JFXButton onAction="#docbtn_action" onMouseEntered="#doc_hover" prefHeight="267.0" prefWidth="187.0" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="com_pane" layoutX="183.0" layoutY="225.0" onMouseEntered="#com_hover" onMouseExited="#com_exit" prefHeight="243.0" prefWidth="187.0" style="-fx-background-color: white; -fx-border-color: #F43955;">
+                     <children>
+                        <Text fx:id="com_text" fill="#f43955" fontSmoothingType="LCD" layoutX="19.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Espace communication">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <effect>
+                              <Blend />
+                           </effect>
+                        </Text>
+                        <ImageView fx:id="img_com" fitHeight="110.0" fitWidth="129.0" layoutX="19.0" layoutY="77.0">
+                           <image>
+                              <Image url="@../Resources/communication.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton onAction="#combtn_action" onMouseEntered="#com_hover" prefHeight="275.0" prefWidth="187.0" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="user_pane" layoutX="142.0" layoutY="184.0" onMouseEntered="#user_hover" onMouseExited="#user_exit" prefHeight="80.0" prefWidth="77.0">
+                     <children>
+                        <Circle centerX="40.0" centerY="40.0" fill="DODGERBLUE" radius="39.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #F43955; -fx-stroke: white;" />
+                        <ImageView fitHeight="50.0" fitWidth="49.0" layoutX="15.0" layoutY="12.0">
+                           <image>
+                              <Image url="@../Resources/user.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton layoutX="-3.0" onMouseEntered="#user_hover" prefHeight="84.0" prefWidth="85.0" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children></JFXDrawer>
+      <Pane fx:id="event_pane" prefHeight="468.0" prefWidth="691.0" style="-fx-background-color: white; -fx-border-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="387.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane fx:id="back_pane" onMouseEntered="#back_hover" onMouseExited="#back_exit" prefHeight="472.0" prefWidth="40.0">
+               <children>
+                  <ImageView fx:id="img_back" fitHeight="80.0" fitWidth="40.0" layoutY="185.0">
+                     <image>
+                        <Image url="@../Resources/back.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="back" focusTraversable="false" onAction="#next_action" prefHeight="472.0" prefWidth="40.0" />
+                  <JFXHamburger fx:id="menu" layoutX="-3.0" layoutY="415.0" prefHeight="57.0" prefWidth="42.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="next_pane" layoutX="636.0" onMouseEntered="#next_hover" onMouseExited="#next_exit" prefHeight="472.0" prefWidth="49.0">
+               <children>
+                  <ImageView fx:id="img_next" fitHeight="80.0" fitWidth="40.0" layoutX="7.0" layoutY="185.0">
+                     <image>
+                        <Image url="@../Resources/next.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="next" focusTraversable="false" layoutY="-6.0" onAction="#next_action" prefHeight="472.0" prefWidth="49.0" />
+               </children>
+            </Pane>
+            <JFXButton fx:id="affiche" focusTraversable="false" layoutX="50.0" layoutY="63.0" maxHeight="364.0" maxWidth="569.0" minHeight="305.0" minWidth="546.0" onAction="#Eventbtn_action" prefHeight="364.0" prefWidth="569.0">
+               <graphic>
+                  <ImageView fx:id="Affiches" fitHeight="363.0" fitWidth="553.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic></JFXButton>
+            <Label layoutX="61.0" layoutY="3.0" prefHeight="39.0" prefWidth="329.0" text="Événements de la semaine" textFill="#f43955">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="576.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Resources/details.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="details_event_home" layoutX="571.0" layoutY="4.0" prefHeight="55.0" prefWidth="49.0" />
+            <StackPane fx:id="details_stackpane_home" layoutX="383.0" layoutY="6.0" prefHeight="141.0" prefWidth="297.0" style="-fx-background-color: white;" visible="false">
+               <children>
+                  <JFXDialogLayout fx:id="details_dialog_home" prefHeight="110.0" prefWidth="416.0" />
+               </children>
+            </StackPane>
+         </children>
+      </Pane>
+      <ImageView fx:id="edit_image" fitHeight="44.0" fitWidth="33.0" layoutX="535.0" layoutY="-80.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Resources/edit.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="delete_image" fitHeight="44.0" fitWidth="33.0" layoutX="416.0" layoutY="-43.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Resources/delete.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="retour_image" fitHeight="44.0" fitWidth="33.0" layoutX="456.0" layoutY="-57.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Resources/small_left_red-512.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="reservation_icon" fitHeight="39.0" fitWidth="63.0" layoutX="107.0" layoutY="-83.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Resources/reservation_icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="report_image" fitHeight="29.0" fitWidth="49.0" layoutX="-32.0" layoutY="-174.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Resources/report.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

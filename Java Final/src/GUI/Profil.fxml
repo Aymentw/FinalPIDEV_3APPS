@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="1058.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ProfilController">
+   <children>
+      <Pane layoutX="-1.0" prefHeight="450.0" prefWidth="1058.0" style="-fx-background-color: #DC7474;">
+         <children>
+            <JFXTextField fx:id="TextPseudo" focusTraversable="false" layoutX="305.0" layoutY="213.0" promptText="Username" style="-fx-background-color: white;" />
+            <JFXPasswordField fx:id="TextPassword" focusTraversable="false" layoutX="305.0" layoutY="270.0" promptText="Password" style="-fx-background-color: white;" />
+            <JFXComboBox fx:id="niveau_cb" focusTraversable="false" layoutX="305.0" layoutY="383.0" prefHeight="25.0" prefWidth="119.0" promptText="Niveau" style="-fx-background-color: white;" />
+            <JFXPasswordField fx:id="TextPasswordConf" layoutX="305.0" layoutY="320.0" promptText="Password Confirmation" style="-fx-background-color: white;" visible="false" />
+            <JFXButton fx:id="update_btn" buttonType="RAISED" disable="true" focusTraversable="false" layoutX="768.0" layoutY="345.0" onAction="#update_action" prefHeight="57.0" prefWidth="158.0" style="-fx-background-color: #ECE4E4;" text="Update" />
+         </children>
+      </Pane>
+      <Pane prefHeight="153.0" prefWidth="1058.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fx:id="photo_img" fitHeight="200.0" fitWidth="200.0" layoutX="30.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
+            <JFXButton layoutX="230.0" layoutY="105.0" onAction="#modifierimage_action" prefHeight="25.0" prefWidth="111.0" style="-fx-background-color: #D77171;" text="Modifier" />
+            <ImageView fitHeight="34.0" fitWidth="98.0" layoutX="968.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Resources/home.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="home" layoutX="971.0" layoutY="17.0" onAction="#bnt_acceuil" prefHeight="44.0" prefWidth="49.0" />
+         </children>
+      </Pane>
+      <ImageView id="ImageError3" fx:id="ImageError3" fitHeight="27.0" fitWidth="32.0" layoutX="468.0" layoutY="213.0" visible="false">
+         <image>
+            <Image url="@../Resources/156.png" />
+         </image>
+      </ImageView>
+      <ImageView id="ImageError6" fx:id="ImageError6" fitHeight="27.0" fitWidth="32.0" layoutX="468.0" layoutY="270.0" visible="false">
+         <image>
+            <Image url="@../Resources/156.png" />
+         </image>
+      </ImageView>
+      <ImageView id="ImageError7" fx:id="ImageError7" fitHeight="27.0" fitWidth="32.0" layoutX="468.0" layoutY="320.0" visible="false">
+         <image>
+            <Image url="@../Resources/156.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

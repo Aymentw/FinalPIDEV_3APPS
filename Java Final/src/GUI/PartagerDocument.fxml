@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="1058.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.PartagerDocumentController">
+   <children>
+      <Label layoutX="404.0" layoutY="38.0" text="Titre" />
+      <Label layoutX="404.0" layoutY="93.0" text="Description" />
+      <Label layoutX="406.0" layoutY="259.0" text="Niveau" />
+      <Label layoutX="404.0" layoutY="312.0" text="Matiére" />
+      <Label layoutX="407.0" layoutY="368.0" text="Fichier" />
+      <TextField fx:id="txtTitre" layoutX="506.0" layoutY="34.0" />
+      <TextField fx:id="txtMatiere" layoutX="519.0" layoutY="308.0" />
+      <TextArea fx:id="txtDescription" layoutX="511.0" layoutY="93.0" prefHeight="130.0" prefWidth="463.0" />
+      <ComboBox fx:id="cboNiveau" layoutX="519.0" layoutY="255.0" prefWidth="150.0" />
+      <Button fx:id="btnUploadDoc" layoutX="519.0" layoutY="364.0" mnemonicParsing="false" onAction="#btnUploadDoc" text="télécharger fichier ..." />
+      <Button fx:id="btnPartager" layoutX="856.0" layoutY="397.0" mnemonicParsing="false" onAction="#PartagerDocument" text="Partager document" />
+      <TextField fx:id="txtpath" layoutX="668.0" layoutY="364.0" />
+      <Pane prefHeight="450.0" prefWidth="235.0" style="-fx-background-color: #E33333;">
+         <children>
+            <Button layoutX="92.0" layoutY="74.0" mnemonicParsing="false" style="-fx-background-color: #E33333;" text="Accueil" textFill="WHITE" />
+            <Button layoutX="61.0" layoutY="154.0" mnemonicParsing="false" style="-fx-background-color: #E33333;" text="Accueil Document" textFill="WHITE" />
+            <Button layoutX="58.0" layoutY="225.0" mnemonicParsing="false" style="-fx-background-color: #E33333;" text="Partager document" textFill="WHITE" />
+         </children></Pane>
+   </children>
+</AnchorPane>

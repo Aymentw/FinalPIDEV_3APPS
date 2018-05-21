@@ -1,0 +1,26 @@
+                try {
+               
+                Properties props = new Properties();
+                props.put("mail.transport.protocol", "smtp");
+                props.put("mail.smtps.host", "smtp.gmail.com");
+                props.put("mail.smtps.auth", "true");
+                Session session = Session.getInstance(props, null);
+                
+                MimeMessage msg = new MimeMessage(session);
+                
+                msg.setFrom(new InternetAddress("Mot de passe <my_email@myDomain.com>"));
+                msg.setRecipients(Message.RecipientType.TO, email.getText());
+                msg.setSubject("Jawlati : Confirmation du  ");
+                msg.setSentDate(new Date(System.currentTimeMillis()));
+                
+                String txt = "Bienvenue sur Jawlati : Tapez ce mot de passe : "+"fdfdfdfd"+"  dans le champs requis et appuiez sur Confirmer ";
+                
+                msg.setText(txt);
+                SMTPTransport st = (SMTPTransport)session.getTransport("smtps");
+                st.connect("smtp.gmail.com","haifa.ftouh@esprit.tn","123haifa.esprit");
+                st.sendMessage(msg, msg.getAllRecipients());
+                
+                System.out.println("ServerResponse : " + st.getLastServerResponse());
+          
+            } catch (MessagingException ex) {
+            }

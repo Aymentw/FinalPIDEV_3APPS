@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="1058.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.InterfaceColocationController">
+   <children>
+      <Pane prefHeight="450.0" prefWidth="234.0" style="-fx-background-color: #f43955;">
+         <children>
+            <JFXButton layoutX="34.0" layoutY="110.0" onAction="#Chercher_action" text="Demander  colocation" textFill="#f2f0f0" />
+            <JFXButton layoutX="34.0" layoutY="213.0" onAction="#proposer_action" text="Proposer une colocation" textFill="#d0d0d0" />
+         </children>
+      </Pane>
+      <JFXButton fx:id="btn_acceuil" layoutX="522.0" layoutY="21.0" onAction="#acceuilbtn" text="Acceuil" />
+      <JFXButton fx:id="btn_mesannonces" layoutX="850.0" layoutY="24.0" onAction="#mesannonce" text="Mes Annnonces" />
+      <JFXButton fx:id="btn_deconnexion" layoutX="944.0" layoutY="412.0" text="Deconnexion" />
+      <Separator layoutX="712.0" layoutY="24.0" orientation="VERTICAL" prefHeight="25.0" prefWidth="3.0" />
+      <JFXButton fx:id="btn_mesfavoris" layoutX="969.0" layoutY="24.0" onAction="#favorisbtn" text="Mes Favoris" />
+      <Separator layoutX="966.0" layoutY="24.0" orientation="VERTICAL" prefHeight="25.0" prefWidth="6.0" />
+      <Pane fx:id="Ajout_pane" layoutX="234.0" layoutY="73.0" prefHeight="339.0" prefWidth="774.0" visible="false">
+         <children>
+            <Label fx:id="adresselab" layoutX="35.0" layoutY="20.0" text="Adresse:" />
+            <Label layoutX="273.0" layoutY="28.0" />
+            <TextField fx:id="adressetxt" layoutX="156.0" layoutY="16.0" />
+            <Label fx:id="colocspresent" layoutX="33.0" layoutY="185.0" text="Colocs déjà présents:" />
+            <Label fx:id="typelog" layoutX="33.0" layoutY="239.0" text="Type de logement:" />
+            <Button fx:id="deposezannoncebtn" layoutX="397.0" layoutY="269.0" mnemonicParsing="false" onAction="#AjouterColocation" prefHeight="25.0" prefWidth="323.0" text="Déposez votre Annonce" />
+            <TextArea fx:id="desc" layoutX="374.0" layoutY="33.0" prefHeight="200.0" prefWidth="248.0" />
+            <Button fx:id="parcourir" layoutX="25.0" layoutY="294.0" mnemonicParsing="false" onAction="#parouriraction" text="Parcourir" />
+            <TextField fx:id="prixtxt" layoutX="156.0" layoutY="80.0" />
+            <Label fx:id="prixlab" layoutX="35.0" layoutY="84.0" text="Prix:" />
+            <ComboBox fx:id="colocspresenttxt" layoutX="156.0" layoutY="181.0" prefWidth="150.0" />
+            <ComboBox fx:id="typelogtxt" layoutX="156.0" layoutY="235.0" prefWidth="150.0" />
+            <TextField fx:id="txtpath" layoutX="112.0" layoutY="294.0" />
+            <Label fx:id="sexe_labajt" layoutX="35.0" layoutY="133.0" text="Sexe" />
+            <ComboBox fx:id="sexeboxann" layoutX="155.0" layoutY="129.0" prefWidth="150.0" promptText="-Sélectionner-" />
+         </children>
+      </Pane>
+      <Pane fx:id="acceuil_pane" layoutX="234.0" layoutY="52.0" prefHeight="339.0" prefWidth="826.0" visible="false">
+         <children>
+            <ImageView fx:id="imgacceuil1" fitHeight="225.0" fitWidth="471.0" layoutX="82.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Resources/imgacceuil1.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgacceuil2" fitHeight="122.0" fitWidth="205.0" layoutX="519.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Resources/imgacceuil2.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgacceuil3" fitHeight="125.0" fitWidth="205.0" layoutX="519.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Resources/imgacceuil3.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <JFXButton fx:id="liste_annonce" layoutX="577.0" layoutY="21.0" onAction="#listerannonce" prefHeight="31.0" prefWidth="150.0" text="Liste des annonces" />
+      <Separator layoutX="587.0" layoutY="24.0" orientation="VERTICAL" prefHeight="25.0" prefWidth="6.0" />
+      <Pane fx:id="chercher_pane" layoutX="240.0" layoutY="49.0" prefHeight="352.0" prefWidth="790.0" visible="false">
+         <children>
+            <TextArea fx:id="desc1" layoutX="429.0" layoutY="45.0" prefHeight="200.0" prefWidth="248.0" />
+            <Label fx:id="nbcolocs" layoutX="85.0" layoutY="108.0" text="Nombre de colocataires:" />
+            <Label fx:id="typelog1" layoutX="85.0" layoutY="168.0" text="Type de logement:" />
+            <Label fx:id="sexe_lab" layoutX="85.0" layoutY="49.0" text="Sexe:" />
+            <Button fx:id="chercher_colocation" layoutX="346.0" layoutY="297.0" mnemonicParsing="false" onAction="#Cherchercolocation" prefHeight="25.0" prefWidth="337.0" text="Déposez votre demande de colocation " />
+            <ComboBox fx:id="listecolocs" layoutX="219.0" layoutY="104.0" prefWidth="150.0" promptText="-Sélectionner-" />
+            <ComboBox fx:id="type_log" layoutX="219.0" layoutY="164.0" prefWidth="150.0" promptText="-Sélectionner-" />
+            <ComboBox fx:id="sexeboxdem" layoutX="214.0" layoutY="45.0" prefWidth="150.0" promptText="-Sélectionner-" />
+         </children>
+      </Pane>
+      <Pane fx:id="panetableview" layoutX="240.0" layoutY="49.0" prefHeight="360.0" prefWidth="807.0" visible="false">
+         <children>
+            <TableView fx:id="tableview" layoutX="14.0" layoutY="15.0" prefHeight="330.0" prefWidth="608.0">
+              <columns>
+                <TableColumn fx:id="Tadresse" prefWidth="75.0" text="Adresse" />
+                <TableColumn fx:id="Tsexe" prefWidth="75.0" text="Sexe" />
+                  <TableColumn fx:id="Tprix" prefWidth="75.0" text="Prix" />
+                  <TableColumn fx:id="Tplace_dispo" prefWidth="75.0" text="Place_dispo" />
+                  <TableColumn fx:id="Ttype_maison" prefWidth="106.0" text="Type_maison" />
+                  <TableColumn fx:id="Tdescription" prefWidth="143.0" text="Description" />
+              </columns>
+            </TableView>
+            <TextField fx:id="rechavancann" layoutX="646.0" layoutY="15.0" promptText="Rechercher" />
+            <Button fx:id="btnchoix" layoutX="667.0" layoutY="199.0" mnemonicParsing="false" onAction="#btnchoisir" prefHeight="25.0" prefWidth="121.0" text="Choisir Annonce" />
+            <Button layoutX="665.0" layoutY="254.0" mnemonicParsing="false" onAction="#affichercontenu" prefHeight="37.0" prefWidth="121.0" text="Afficher Contenu" />
+            <Button fx:id="btnchoix1" layoutX="665.0" layoutY="129.0" mnemonicParsing="false" onAction="#btnajoutfav" prefHeight="25.0" prefWidth="121.0" text="Ajouter aux favoris" />
+         </children>
+      </Pane>
+      <JFXButton fx:id="lstdem" layoutX="709.0" layoutY="21.0" onAction="#listerdemande" text="Liste des demandes" />
+      <Separator layoutX="853.0" layoutY="24.0" orientation="VERTICAL" prefHeight="25.0" prefWidth="3.0" />
+      <Pane fx:id="panetabviewdem" layoutX="245.0" layoutY="66.0" prefHeight="345.0" prefWidth="774.0" visible="false">
+         <children>
+            <TableView fx:id="tabviewdem" layoutX="32.0" layoutY="11.0" prefHeight="323.0" prefWidth="562.0">
+              <columns>
+                <TableColumn fx:id="sexedem" prefWidth="75.0" text="Sexe" />
+                <TableColumn fx:id="nbcolocsdem" prefWidth="162.0" text="Nombre de colocataires" />
+                  <TableColumn fx:id="typelogdem" minWidth="0.0" prefWidth="139.0" text="Type de logement" />
+                  <TableColumn fx:id="descdem" prefWidth="216.0" text="Description" />
+              </columns>
+            </TableView>
+            <TextField fx:id="txtrechdem" layoutX="611.0" layoutY="97.0" promptText="Rechercher" />
+         </children>
+      </Pane>
+      <Pane fx:id="mespane" layoutX="240.0" layoutY="66.0" prefHeight="339.0" prefWidth="807.0" visible="false">
+         <children>
+            <TableView fx:id="mestableview" layoutX="9.0" layoutY="14.0" prefHeight="310.0" prefWidth="641.0">
+              <columns>
+                <TableColumn fx:id="mesadresse" prefWidth="75.0" text="Adresse" />
+                <TableColumn fx:id="messexe" prefWidth="75.0" text="Sexe" />
+                  <TableColumn fx:id="mesprix" prefWidth="75.0" text="Prix" />
+                  <TableColumn fx:id="mesplacedispo" prefWidth="100.0" text="Place_dispo" />
+                  <TableColumn fx:id="mestypemaison" prefWidth="115.0" text="Type_maison" />
+                  <TableColumn fx:id="mesdesc" prefWidth="203.0" text="Description" />
+              </columns>
+            </TableView>
+            <TextField fx:id="mesanntxt" layoutX="650.0" layoutY="75.0" promptText="Rechercher" />
+            <Button layoutX="660.0" layoutY="272.0" mnemonicParsing="false" onAction="#messup" prefHeight="37.0" prefWidth="145.0" text="Supprimer" />
+            <Button layoutX="658.0" layoutY="192.0" mnemonicParsing="false" onAction="#modifierannonce" prefHeight="44.0" prefWidth="145.0" text="Modifier" />
+         </children>
+      </Pane>
+      <Pane fx:id="modif_pane" layoutX="244.0" layoutY="83.0" prefHeight="339.0" prefWidth="774.0" visible="false">
+         <children>
+            <Label fx:id="adresselab1" layoutX="35.0" layoutY="20.0" text="Adresse:" />
+            <Label layoutX="273.0" layoutY="28.0" />
+            <TextField fx:id="adressetxt1" layoutX="156.0" layoutY="16.0" />
+            <Label fx:id="colocspresent1" layoutX="33.0" layoutY="185.0" text="Colocs déjà présents:" />
+            <Label fx:id="typelog2" layoutX="33.0" layoutY="239.0" text="Type de logement:" />
+            <Button fx:id="deposezannoncebtn1" layoutX="374.0" layoutY="269.0" mnemonicParsing="false" onAction="#validermodif" prefHeight="25.0" prefWidth="248.0" text="Valider" />
+            <TextArea fx:id="desc2" layoutX="374.0" layoutY="33.0" prefHeight="200.0" prefWidth="248.0" />
+            <Button fx:id="parcourir1" layoutX="25.0" layoutY="294.0" mnemonicParsing="false" onAction="#parcouriraction" text="Parcourir" />
+            <TextField fx:id="prixtxt1" layoutX="156.0" layoutY="80.0" />
+            <Label fx:id="prixlab1" layoutX="35.0" layoutY="84.0" text="Prix:" />
+            <ComboBox fx:id="colocspresenttxt1" layoutX="156.0" layoutY="181.0" prefWidth="150.0" />
+            <ComboBox fx:id="typelogtxt1" layoutX="156.0" layoutY="235.0" prefWidth="150.0" />
+            <TextField fx:id="txtpath1" layoutX="112.0" layoutY="294.0" />
+            <Label fx:id="sexe_labajt1" layoutX="35.0" layoutY="133.0" text="Sexe" />
+            <ComboBox fx:id="sexeboxann1" layoutX="155.0" layoutY="129.0" prefWidth="150.0" promptText="-Sélectionner-" />
+         </children>
+      </Pane>
+      <Pane fx:id="affiche_pane1" layoutX="254.0" layoutY="93.0" prefHeight="339.0" prefWidth="774.0" visible="false">
+         <children>
+            <Label fx:id="adresselab11" layoutX="35.0" layoutY="20.0" text="Adresse:" />
+            <Label layoutX="273.0" layoutY="28.0" />
+            <Label fx:id="colocspresent11" layoutX="33.0" layoutY="185.0" text="Colocs déjà présents:" />
+            <Label fx:id="typelog21" layoutX="33.0" layoutY="239.0" text="Type de logement:" />
+            <Label fx:id="prixlab11" layoutX="35.0" layoutY="84.0" text="Prix:" />
+            <Label fx:id="sexe_labajt11" layoutX="35.0" layoutY="133.0" text="Sexe" />
+            <Label fx:id="addresslab2" layoutX="158.0" layoutY="16.0" prefHeight="25.0" prefWidth="145.0" />
+            <Label fx:id="addresslab21" layoutX="158.0" layoutY="80.0" prefHeight="25.0" prefWidth="145.0" />
+            <Label fx:id="addresslab22" layoutX="169.0" layoutY="129.0" prefHeight="25.0" prefWidth="145.0" />
+            <Label fx:id="addresslab23" layoutX="169.0" layoutY="181.0" prefHeight="25.0" prefWidth="145.0" />
+            <Label fx:id="addresslab24" layoutX="169.0" layoutY="235.0" prefHeight="25.0" prefWidth="145.0" />
+            <Label fx:id="addresslab25" layoutX="420.0" layoutY="69.0" prefHeight="159.0" prefWidth="205.0" />
+            <Label fx:id="adresselab111" layoutX="405.0" layoutY="45.0" text="Description" />
+         </children>
+      </Pane>
+      <Pane fx:id="panefavoris" layoutX="240.0" layoutY="49.0" prefHeight="367.0" prefWidth="813.0">
+         <children>
+            <TableView fx:id="tableviewfav" layoutX="23.0" layoutY="14.0" prefHeight="310.0" prefWidth="641.0">
+               <columns>
+                  <TableColumn fx:id="adressefav" prefWidth="75.0" text="Adresse" />
+                  <TableColumn fx:id="sexefav" prefWidth="75.0" text="Sexe" />
+                  <TableColumn fx:id="prixfav" prefWidth="75.0" text="Prix" />
+                  <TableColumn fx:id="placedispofav" prefWidth="100.0" text="Place_dispo" />
+                  <TableColumn fx:id="typemaisonfav" prefWidth="115.0" text="Type_maison" />
+                  <TableColumn fx:id="descfav" prefWidth="203.0" text="Description" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

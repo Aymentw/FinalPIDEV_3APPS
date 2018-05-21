@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="1058.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.IntAnnonceController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="450.0" prefWidth="1058.0">
+         <children>
+            <Pane fx:id="afficher_pane" layoutX="529.0" prefHeight="450.0" prefWidth="529.0" visible="false">
+               <children>
+                  <JFXTextField fx:id="Libelle_field" layoutX="14.0" layoutY="98.0" promptText="Sujet" />
+                  <JFXTextArea fx:id="Desc_field" layoutX="14.0" layoutY="148.0" promptText="Description" />
+                  <JFXButton buttonType="RAISED" layoutX="62.0" layoutY="357.0" onAction="#modifier_action" prefHeight="50.0" prefWidth="157.0" style="-fx-background-color: #434543;" text="Modifier" textFill="#fcf9f9">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="313.0" layoutY="357.0" onAction="#Supprimer_action" prefHeight="50.0" prefWidth="157.0" style="-fx-background-color: #434543;" text="Supprimer" textFill="#fcf9f9">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="366.0" layoutY="26.0" onAction="#close_action" prefHeight="41.0" prefWidth="104.0" style="-fx-background-color: #434543;" text="Close" textFill="#fcf9f9" />
+               </children>
+            </Pane>
+            <Pane fx:id="ConsulterAnnonceId" onMouseClicked="#tabview_exited" prefHeight="450.0" prefWidth="529.0">
+               <children>
+                  <TableView fx:id="Annonces" focusTraversable="false" layoutY="65.0" onMouseClicked="#tabview_clicked" prefHeight="386.0" prefWidth="472.0">
+                     <columns>
+                        <TableColumn fx:id="ColumnLibelle" prefWidth="97.0" text="Libelle" />
+                        <TableColumn fx:id="ColumnDesc" prefWidth="238.0" text="Description" />
+                        <TableColumn fx:id="ColumnPhoto" prefWidth="136.0" text="Photo" />
+                     </columns>
+                  </TableView>
+                  <Label layoutX="14.0" layoutY="30.0" text="Liste des annonces">
+                     <font>
+                        <Font name="Bell MT" size="24.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="search_field" layoutX="220.0" layoutY="33.0" />
+                  <ImageView fx:id="imgpdf" fitHeight="50.0" fitWidth="52.0" layoutX="465.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../Resources/pdf.png" />
+                     </image></ImageView>
+                  
+                  <JFXButton fx:id="pdfid" layoutX="464.0" layoutY="8.0" onAction="#annoncePdf" prefHeight="50.0" prefWidth="52.0" text="." visible="false" />
+                  <ImageView fitHeight="41.0" fitWidth="38.0" layoutX="385.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Resources/home.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton layoutX="385.0" layoutY="13.0" onAction="#AcceuilComm" prefHeight="41.0" prefWidth="38.0" text="." />
+               </children>
+            </Pane>
+            <Pane fx:id="ajouter_pane" layoutX="529.0" prefHeight="450.0" prefWidth="529.0" visible="false">
+               <children>
+                  <JFXTextField fx:id="Libelle_field1" layoutX="14.0" layoutY="29.0" promptText="Sujet" />
+                  <JFXTextArea fx:id="Desc_field1" layoutX="14.0" layoutY="81.0" promptText="Description" />
+                  <JFXButton buttonType="RAISED" layoutX="62.0" layoutY="357.0" onAction="#Ajouter_action" prefHeight="50.0" prefWidth="157.0" style="-fx-background-color: #434543;" text="Publier" textFill="#fcf9f9">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="313.0" layoutY="357.0" onAction="#Annuler_action" prefHeight="50.0" prefWidth="157.0" style="-fx-background-color: #434543;" text="Annuler" textFill="#fcf9f9">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnupid" layoutX="23.0" layoutY="293.0" onAction="#btnUploadDoc" prefHeight="41.0" prefWidth="135.0" style="-fx-background-color: #434543;" text="Parcourir" textFill="#fcf9f9" />
+                  <Label fx:id="txtpath" layoutX="194.0" layoutY="301.0" prefHeight="25.0" prefWidth="127.0" text="Label" />
+               </children>
+            </Pane>
+            <Pane fx:id="add_pane" layoutX="600.0" layoutY="30.0" onMouseEntered="#add_entered" onMouseExited="#add_exited" opacity="0.1" prefHeight="372.0" prefWidth="378.0">
+               <children>
+                  <ImageView fitHeight="370.0" fitWidth="455.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Resources/AddSpace.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton onAction="#add_action" prefHeight="370.0" prefWidth="374.0" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

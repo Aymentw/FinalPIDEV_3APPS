@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="1058.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AccueilDocumentsController">
+   <children>
+      <Label layoutX="329.0" layoutY="30.0" text="Niveau :" />
+      <Label layoutX="758.0" layoutY="30.0" text="Matiére :" />
+      <ComboBox fx:id="cboNiveau" accessibleText="as" layoutX="403.0" layoutY="26.0" onAction="#RechercheNiveau" prefWidth="150.0" />
+      <TextField fx:id="txtMatiere" layoutX="833.0" layoutY="26.0" onKeyTyped="#RechercheMatiere" />
+      <TableView fx:id="tabDocuments" layoutX="329.0" layoutY="72.0" prefHeight="287.0" prefWidth="651.0">
+        <columns>
+            <TableColumn fx:id="cellId" minWidth="0.0" prefWidth="0.0" text="Id" visible="false" />
+          <TableColumn fx:id="cellTitre" prefWidth="218.0" text="Titre" />
+          <TableColumn fx:id="cellDescription" minWidth="0.0" prefWidth="499.0" text="Description" visible="false" />
+            <TableColumn fx:id="cellPath" prefWidth="75.0" text="Path" visible="false" />
+            <TableColumn fx:id="cellNiveau" prefWidth="208.0" text="Niveau" />
+            <TableColumn fx:id="cellMatiere" minWidth="0.0" prefWidth="224.0" text="Matiere" />
+            <TableColumn fx:id="cellId_User" prefWidth="75.0" text="id_user" visible="false" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnAffiche" layoutX="870.0" layoutY="372.0" mnemonicParsing="false" onAction="#AfficherContenue" text="Afficher contenue" />
+      <Pane layoutX="1.0" prefHeight="450.0" prefWidth="235.0" style="-fx-background-color: #E33333;">
+         <children>
+            <Button layoutX="48.0" layoutY="167.0" mnemonicParsing="false" onAction="#PartagerDoc" style="-fx-background-color: #E33333;" text="Partager Document" textFill="WHITE" />
+            <Button layoutX="82.0" layoutY="124.0" mnemonicParsing="false" onAction="#goToAccueil" style="-fx-background-color: #E33333;" text="Accueil" textFill="WHITE" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

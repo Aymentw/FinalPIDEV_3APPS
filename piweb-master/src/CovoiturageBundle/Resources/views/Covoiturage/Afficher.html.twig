@@ -1,0 +1,136 @@
+{% extends '::default/Layout.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("css/animate.css") }}">
+    <style>
+        @-webkit-keyframes hvr-buzz {
+            50% {
+                -webkit-transform: translateX(3px) rotate(2deg);
+                transform: translateX(3px) rotate(2deg);
+            }
+            100% {
+                -webkit-transform: translateX(-3px) rotate(-2deg);
+                transform: translateX(-3px) rotate(-2deg);
+            }
+        }
+        @keyframes hvr-buzz {
+            50% {
+                -webkit-transform: translateX(3px) rotate(2deg);
+                transform: translateX(3px) rotate(2deg);
+            }
+            100% {
+                -webkit-transform: translateX(-3px) rotate(-2deg);
+                transform: translateX(-3px) rotate(-2deg);
+            }
+        }
+        .hvr-buzz {
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        }
+        .hvr-buzz:hover, .hvr-buzz:focus, .hvr-buzz:active {
+            -webkit-animation-name: hvr-buzz;
+            animation-name: hvr-buzz;
+            -webkit-animation-duration: 0.15s;
+            animation-duration: 0.15s;
+            -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+        }
+    </style>
+{% endblock %}
+{% block javascripts %}
+    <script>
+        function  Signaler() {
+            $.ajax({
+                type: 'POST',
+                url: "{{ path("covoiturage_Signaler") }}",
+                data: { idC: {{ c.id }},
+                }
+        });
+            $('#signaler').addClass('animated bounceOutLeft');
+        }
+        $( document ).ready(function() {
+            $('#map').addClass('animated jackInTheBox');
+            $("#signaler").mouseenter(function(){
+             document.getElementById('signaler').src="{{ asset('images/Ressources/report1.png') }}";
+
+            });
+            $("#signaler").mouseleave(function(){
+                document.getElementById('signaler').src="{{ asset('images/Ressources/report0.png') }}";
+            });
+        });
+    </script>
+{% endblock %}
+{% block body %}
+<div class="contact">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a  href="{{ path("covoiturage_Lister") }}">Home</a></li>
+            <li class="active">Covoiturage</li>
+            {% if covS == null and c.idU!=app.user %}
+            <li><div class="hvr-buzz"  style="margin-left: 900px"><img id="signaler" src="{{ asset('images/Ressources/report0.png') }}" style="width: 30px;height: 30px" onclick="Signaler()"/></div>
+            </li>
+            {% endif %}
+        </ol>
+        <section class="container" >
+        <div  class="col-md-3" style="margin-left: 800px">{{ twitterButton() }}</div>
+              </section>
+    <section class="container" onload="initMap()">
+        <br>
+        <br>
+        <div class="col-md-6"><h4 class="ghj">From</h4>
+            <div class="well" style="width: 300px">{{c.depart}}</div>
+        </div>
+        <div class="col-md-6" > <h4 class="ghj">To</h4>
+            <div class="well" style="width: 300px">{{c.destination}}</div></div>
+        <div class="col-md-6"> <h4 class="ghj">Date</h4>
+            <div class="well" style="width: 300px">{{c.date | date}}</div></div>
+    </section>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+    <div id="map" style="width: 700px;margin-left: 200px"></div>
+    </div>
+    <br><br>
+    {% if c.idU==current_user %}
+    <section class="container" >
+    <a href="{{ path('covoiturage_Modifier',{'IdC':c.id}) }}">  <button type="submit" class="col-md-6" style="width: 150px">Modifier</button></a>
+        <a href="{{ path('covoiturage_Supprimer',{'IdC':c.id}) }}">  <button type="submit" class="col-md-6" style="width: 150px;margin-left: 700px">Supprimer</button></a>
+    </section>
+    {% endif %}
+
+
+</div>
+    <script>
+
+        function initMap() {
+            var uluru = {lat: 36.898392, lng: 10.1875433};
+            var depart = {lat: {{ depart.lat }}, lng: {{ depart.lng }}};
+            var dest = {lat: {{ dest.lat }}, lng: {{ dest.lng }}};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 8,
+                center: uluru
+            });
+            var marker1 = new google.maps.Marker({
+                position: depart,
+                map: map,
+                label: 'A'
+            });
+            var marker2 = new google.maps.Marker({
+                position: dest,
+                map: map,
+                label: 'B'
+            });
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtT0VIFnzSavgT5p6UO9Lp92fd7KJVCs0&callback=initMap">
+    </script>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="1058.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterColocationController">
+   <children>
+      <Label fx:id="adresselab" layoutX="227.0" layoutY="81.0" text="Adresse:" />
+      <Label layoutX="78.0" layoutY="221.0" />
+      <TextField fx:id="adressetxt" layoutX="348.0" layoutY="77.0" />
+      <Label fx:id="colocspresent" layoutX="227.0" layoutY="192.0" text="Colocs déjà présents:" />
+      <Label fx:id="typelog" layoutX="223.0" layoutY="252.0" text="Type de logement:" />
+      <Button fx:id="deposezannoncebtn" layoutX="711.0" layoutY="406.0" mnemonicParsing="false" onAction="#AjouterColocation" prefHeight="25.0" prefWidth="323.0" text="Déposez votre Annonce" />
+      <TextArea fx:id="desc" layoutX="562.0" layoutY="77.0" prefHeight="200.0" prefWidth="248.0" text="Décrivez votre Annonce en quelques lignes.." />
+      <ImageView fx:id="imgannonce" fitHeight="150.0" fitWidth="200.0" layoutX="429.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="parcourir" layoutX="339.0" layoutY="330.0" mnemonicParsing="false" text="Parcourir" />
+      <TextField fx:id="prixtxt" layoutX="348.0" layoutY="132.0" />
+      <Label fx:id="prixlab" layoutX="227.0" layoutY="136.0" text="Prix:" />
+      <Hyperlink fx:id="Acceuilajout" layoutX="810.0" layoutY="24.0" text="Acceuil" />
+      <Separator layoutX="856.0" layoutY="24.0" orientation="VERTICAL" prefHeight="23.0" prefWidth="1.0" />
+      <Hyperlink fx:id="deconnexionrech" layoutX="951.0" layoutY="24.0" text="Déconnexion " />
+      <Hyperlink fx:id="deconnexionrech1" layoutX="859.0" layoutY="24.0" text="Contactez-nous" />
+      <Separator layoutX="948.0" layoutY="24.0" orientation="VERTICAL" prefHeight="23.0" prefWidth="1.0" />
+      <ComboBox fx:id="colocspresenttxt" layoutX="348.0" layoutY="188.0" prefWidth="150.0" />
+      <ComboBox fx:id="typelogtxt" layoutX="348.0" layoutY="248.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>

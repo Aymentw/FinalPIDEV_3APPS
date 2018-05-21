@@ -1,0 +1,75 @@
+document_homepage:
+    path:     /docbundle
+    defaults: { _controller: DocumentBundle:Default:index }
+
+partager_document:
+    path:     /ajouter_document
+    defaults: { _controller: DocumentBundle:Document:ajouter }
+
+liste_document:
+    path:     /liste_document
+    defaults: { _controller: DocumentBundle:Document:liste }
+
+liste_attente_document:
+    path:     /liste_attente_document
+    defaults: { _controller: DocumentBundle:Document:listeAttente }
+
+detail_document:
+    path:     /detail_document
+    defaults: { _controller: DocumentBundle:Document:detail }
+
+supprimer_document:
+    path:     /supprimer_document/{id}
+    defaults: { _controller: DocumentBundle:Document:supprimer }
+
+modifier_document:
+    path:     /modifier_document/{id}
+    defaults: { _controller: DocumentBundle:Document:modifier }
+
+recherche_document:
+    path:     /recherche_document
+    defaults: { _controller: DocumentBundle:Document:recherche }
+
+ajouter_commentaire:
+    path:     /ajouter_commentaire
+    defaults: { _controller: DocumentBundle:Commentaire:ajouter }
+
+liste_documentAdmin:
+    path:     /admin/
+    defaults: { _controller: DocumentBundle:Admin:liste }
+
+validation_documentAdmin:
+    path:     /admin/validation _document/{id}
+    defaults: { _controller: DocumentBundle:Admin:validation }
+
+supprimer_documentAdmin:
+    path:     /admin/supprimer_document/{id}
+    defaults: { _controller: DocumentBundle:Admin:supprimer }
+
+count_documentAdmin:
+    path:     /admin/
+    defaults: { _controller: DocumentBundle:Admin:count }
+
+partager_document_mobile:
+    path:     /ajouter_document_mobile
+    defaults: { _controller: DocumentBundle:Mobile:ajouter }
+
+find_document:
+    path:     /find/{id}
+    defaults: { _controller: DocumentBundle:Mobile:find }
+
+images_mobiles:
+    path:     /images
+    defaults: { _controller: DocumentBundle:Mobile:Images }
+
+liste_attente_mobiles:
+    path:     /liste_attente_mobile/{id}
+    defaults: { _controller: DocumentBundle:Mobile:listeattente }
+
+supprimer_doc_mobile:
+    path:     /supprimer_doc_mobile/{id}
+    defaults: { _controller: DocumentBundle:Mobile:supprimer }
+
+liste_document_mobile:
+    path:     /liste_document_mobile
+    defaults: { _controller: DocumentBundle:Mobile:list }

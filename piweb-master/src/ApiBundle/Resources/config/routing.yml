@@ -1,0 +1,134 @@
+api_homepage:
+    path:     /login
+    defaults: { _controller: ApiBundle:Evenement:login }
+api_register:
+    path:     /register
+    defaults: { _controller: ApiBundle:Evenement:register }
+api_week:
+    path:     /week
+    defaults: { _controller: ApiBundle:Evenement:findWeek }
+api_allevents:
+    path:     /allevents
+    defaults: { _controller: ApiBundle:Evenement:findAll }
+api_images:
+    path:     /images
+    defaults: { _controller: ApiBundle:Evenement:Images }
+api_img_user:
+    path:     /images_user
+    defaults: { _controller: ApiBundle:Evenement:ImagesUser }
+api_eventById:
+    path:     /eventById
+    defaults: { _controller: ApiBundle:Evenement:EventById }
+api_editUser:
+    path:     /edit_user
+    defaults: { _controller: ApiBundle:Evenement:EditUser }
+api_addEvent:
+    path:     /add_event
+    defaults: { _controller: ApiBundle:Evenement:AddEvent }
+api_editEvent:
+    path:     /edit_event
+    defaults: { _controller: ApiBundle:Evenement:editEvent }
+api_Current:
+    path:     /current_event
+    defaults: { _controller: ApiBundle:Evenement:findCurrent }
+api_events_my:
+    path:     /my_events
+    defaults: { _controller: ApiBundle:Evenement:myEvents }
+api_events_delete:
+    path:     /delete_event
+    defaults: { _controller: ApiBundle:Evenement:deleteEvent }
+api_events_res:
+    path:     /mes_res
+    defaults: { _controller: ApiBundle:Evenement:myResEvents }
+api_ann_res:
+    path:     /annuler_res
+    defaults: { _controller: ApiBundle:Evenement:annulerReservation }
+api_conf_res:
+    path:     /confirmer_res
+    defaults: { _controller: ApiBundle:Evenement:Reservation }
+
+
+
+
+liste_covs:
+    path:     /Getlist
+    defaults: { _controller: ApiBundle:Default:getlist }
+
+AjoutMob:
+    path:     /AjoutMobile/{depart}/{destination}/{date}/{type}
+    defaults: { _controller: ApiBundle:Default:AjoutMobile }
+
+Adresse_name:
+    path:     /getAdrByName/{nom}
+    defaults: { _controller: ApiBundle:Default:getAdrByName }
+
+mobile_add:
+    path:     /mobileAdd/{sujet}/{description}/{path}/{id}
+    defaults: { _controller: ApiBundle:Topic:mobileAdd }
+
+recherche_mobile:
+    path:     /mobileSearch/{d}
+    defaults: { _controller: ApiBundle:Topic:mobileSearch }
+
+topic_images:
+    path:     /imagesTop
+    defaults: { _controller: ApiBundle:Topic:Images }
+
+mes_topics_mobile:
+    path:     /mesTopicsMobile/{id}
+    defaults: { _controller: ApiBundle:Topic:mesTopicsMob }
+
+mobile_username_topic:
+    path:     /usernameMob/{idT}
+    defaults: { _controller: ApiBundle:Topic:userMob }
+
+mobile_delete:
+    path:     /deleteTopMob/{idT}
+    defaults: { _controller: ApiBundle:Topic:delMob }
+
+mobile_details:
+    path:     /mobileDetails/{id}
+    defaults: { _controller: ApiBundle:Topic:mobileDetails }
+
+stack:
+    path:     /yop
+    defaults: { _controller: ApiBundle:Topic:getStack }
+
+date_top_mob:
+    path:     /dateTop/{idT}
+    defaults: { _controller: ApiBundle:Topic:dateTop }
+
+afficher_annoncee:
+    path:     /afficheAnn
+    defaults: { _controller: ApiBundle:Colocation:afficheeAnnonce }
+
+mobile_addcol:
+    path:     /mobileAdd/{type}/{adr}/{sexe}/{prix}/{place}/{typeM}/{desc}/{path}/{idu}
+    defaults: { _controller: ApiBundle:Colocation:mobileAdd}
+
+search_coloc:
+    path:     /searchMob/{adresse}
+    defaults: { _controller: ApiBundle:Colocation:searchColocMob }
+
+Supprimer_coloc:
+    path:     /deleteColMob/{id}
+    defaults: { _controller: ApiBundle:Colocation:supprimercolocationMob }
+
+detail_coloc:
+    path:     /detailMob/{id}
+    defaults: { _controller: ApiBundle:Colocation:detailColocation }
+
+coloc_images:
+    path:     /imagesCol
+    defaults: { _controller: ApiBundle:Colocation:Images }
+
+mes_coloc:
+    path:     /mescoloc/{id}
+    defaults: { _controller: ApiBundle:Colocation:mescoloc }
+
+modifier_colocmob:
+    path:     /modifmob
+    defaults: { _controller: ApiBundle:Colocation:modifierColocationMob }
+chercher_Mob:
+    path:     /cherchermob/{input}
+    defaults: { _controller: ApiBundle:Default:Chercher }

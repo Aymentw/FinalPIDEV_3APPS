@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="1058.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="nbcolocs" layoutX="144.0" layoutY="87.0" text="Nombre de colocataires:" />
+      <MenuButton fx:id="listecolocs" layoutX="306.0" layoutY="83.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="-Séléctionner-">
+         <items>
+            <MenuItem mnemonicParsing="false" text="Action 1" />
+            <MenuItem mnemonicParsing="false" text="Action 2" />
+         </items>
+      </MenuButton>
+      <Label fx:id="typelog" layoutX="175.0" layoutY="140.0" text="Type de logement:" />
+      <MenuButton fx:id="listelog" layoutX="306.0" layoutY="136.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="-Séléctionner-">
+         <items>
+            <MenuItem mnemonicParsing="false" text="Action 1" />
+            <MenuItem mnemonicParsing="false" text="Action 2" />
+         </items>
+      </MenuButton>
+      <TextArea fx:id="desc" layoutX="504.0" layoutY="87.0" prefHeight="200.0" prefWidth="248.0" text="Décrivez votre demande en quelques lignes.." />
+   </children>
+</AnchorPane>

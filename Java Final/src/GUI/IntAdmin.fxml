@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="401.0" prefWidth="712.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.IntAdminController">
+   <children>
+      <JFXTabPane fx:id="tabpane" onMouseClicked="#tabpane_clicked" prefHeight="41.0" prefWidth="711.0" stylesheets="@tabpane.css">
+         <tabs>
+            <Tab fx:id="coloc_tab" text="colocations">
+              <content>
+                <AnchorPane maxHeight="500.0" maxWidth="800.0" minHeight="0.0" minWidth="0.0" prefHeight="251.0" prefWidth="711.0" />
+              </content>
+            </Tab>
+            <Tab fx:id="cov_tab" text="Covoiturages">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab fx:id="ann_tab" text="Annonces">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab fx:id="rec_tab" text="Reclamations">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab fx:id="topic_tab" text="Topics">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab fx:id="doc_tab" text="Documents">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab fx:id="ev_tab" text="Evenements">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+      <Pane fx:id="col_pane" layoutY="34.0" prefHeight="432.0" prefWidth="711.0" visible="false">
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="251.0" layoutY="347.0" onAction="#suppcol_action" prefHeight="53.0" prefWidth="157.0" style="-fx-background-color: #EE5C5C;" text="Supprimer" textFill="#f5f3f3">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </JFXButton>
+            <TableView fx:id="tableviewfav" layoutX="35.0" layoutY="22.0" prefHeight="310.0" prefWidth="641.0">
+               <columns>
+                  <TableColumn fx:id="adressefav" prefWidth="75.0" text="Adresse" />
+                  <TableColumn fx:id="sexefav" prefWidth="75.0" text="Sexe" />
+                  <TableColumn fx:id="prixfav" prefWidth="75.0" text="Prix" />
+                  <TableColumn fx:id="placedispofav" prefWidth="100.0" text="Place_dispo" />
+                  <TableColumn fx:id="typemaisonfav" prefWidth="115.0" text="Type_maison" />
+                  <TableColumn fx:id="descfav" prefWidth="203.0" text="Description" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Pane fx:id="cov_pane" layoutY="34.0" prefHeight="432.0" prefWidth="711.0" visible="false">
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="251.0" layoutY="347.0" onAction="#suppcov_action" prefHeight="53.0" prefWidth="157.0" style="-fx-background-color: #EE5C5C;" text="Supprimer" textFill="#f5f3f3">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </JFXButton>
+            <TableView fx:id="tableviewcov" layoutX="101.0" layoutY="28.0" prefHeight="310.0" prefWidth="510.0">
+               <columns>
+                  <TableColumn fx:id="DepartColumn" prefWidth="120.0" text="Depart" />
+                  <TableColumn fx:id="DestColumn" prefWidth="120.0" text="Destination" />
+                  <TableColumn fx:id="TypeColumn" prefWidth="120.0" text="Type" />
+                  <TableColumn fx:id="DateColumn" prefWidth="150.0" text="Date" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Pane fx:id="ann_pane" layoutY="34.0" prefHeight="432.0" prefWidth="711.0" visible="false">
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="251.0" layoutY="347.0" onAction="#suppann_action" prefHeight="53.0" prefWidth="157.0" style="-fx-background-color: #EE5C5C;" text="Supprimer" textFill="#f5f3f3">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </JFXButton>
+            <TableView fx:id="Annonces" focusTraversable="false" layoutX="103.0" layoutY="22.0" onMouseClicked="#tabview_clicked" prefHeight="310.0" prefWidth="472.0">
+               <columns>
+                  <TableColumn fx:id="ColumnLibelle" prefWidth="97.0" text="Libelle" />
+                  <TableColumn fx:id="ColumnDesc" prefWidth="238.0" text="Description" />
+                  <TableColumn fx:id="ColumnPhoto" prefWidth="136.0" text="Photo" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Pane fx:id="rec_pane" layoutY="34.0" prefHeight="432.0" prefWidth="711.0" visible="false">
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="251.0" layoutY="347.0" onAction="#supprec_action" prefHeight="53.0" prefWidth="157.0" style="-fx-background-color: #EE5C5C;" text="Supprimer" textFill="#f5f3f3">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </JFXButton>
+            <TableView fx:id="Reclamations" focusTraversable="false" layoutX="132.0" layoutY="27.0" onMouseClicked="#tabview_clicked" prefHeight="295.0" prefWidth="429.0">
+               <columns>
+                  <TableColumn fx:id="ColumnSujetTop" prefWidth="125.0" text="Objet" />
+                  <TableColumn fx:id="ColumnDescTop" prefWidth="300.0" text="Description" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Pane fx:id="topic_pane" layoutY="34.0" prefHeight="432.0" prefWidth="711.0" visible="false">
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="251.0" layoutY="347.0" onAction="#supptopic_action" prefHeight="53.0" prefWidth="157.0" style="-fx-background-color: #EE5C5C;" text="Supprimer" textFill="#f5f3f3">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </JFXButton>
+            <TableView fx:id="Topics" focusTraversable="false" layoutX="101.0" layoutY="28.0" onMouseClicked="#tabview_clicked" prefHeight="295.0" prefWidth="429.0">
+               <columns>
+                  <TableColumn fx:id="ColumnSujetTop1" prefWidth="125.0" text="Sujet" />
+                  <TableColumn fx:id="ColumnDescTop1" prefWidth="300.0" text="Description" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Pane fx:id="doc_pane" layoutY="34.0" prefHeight="432.0" prefWidth="711.0" visible="false">
+         <children>
+            <TableView fx:id="tabDocuments" layoutX="53.0" layoutY="29.0" prefHeight="287.0" prefWidth="582.0">
+               <columns>
+                  <TableColumn fx:id="cellTitre" prefWidth="108.0" text="Titre" />
+                  <TableColumn fx:id="cellDescription" minWidth="0.0" prefWidth="250.0" text="Description" />
+                  <TableColumn fx:id="cellPath" prefWidth="129.0" text="Path" />
+                  <TableColumn fx:id="cellNiveau" prefWidth="96.0" text="Niveau" />
+                  <TableColumn fx:id="cellMatiere" minWidth="0.0" prefWidth="169.0" text="Matiere" />
+               </columns>
+            </TableView>
+            <JFXButton buttonType="RAISED" layoutX="251.0" layoutY="347.0" onAction="#suppdoc_action" prefHeight="53.0" prefWidth="157.0" style="-fx-background-color: #EE5C5C;" text="Supprimer" textFill="#f5f3f3">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane fx:id="ev_pane" layoutY="34.0" prefHeight="432.0" prefWidth="711.0" visible="false">
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="251.0" layoutY="347.0" prefHeight="53.0" prefWidth="157.0" style="-fx-background-color: #EE5C5C;" text="Supprimer" textFill="#f5f3f3">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
